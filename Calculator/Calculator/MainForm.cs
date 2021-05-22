@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: www.rica.com
+ * User: John Rey B. Macascas
  * Date: 5/21/2021
  * Time: 11:36 AM
  * 
@@ -34,6 +34,10 @@ namespace Calculator
 	
 		}
 		void Button7Click(object sender, EventArgs e)
+		{
+	
+		}
+		void Button13Click(object sender, EventArgs e)
 		{
 	
 		}
