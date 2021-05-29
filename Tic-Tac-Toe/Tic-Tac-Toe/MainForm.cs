@@ -163,6 +163,15 @@ namespace Tic_Tac_Toe
 						labelScore1.Text = Convert.ToString(addScore + 1);
 						resetter();
 				}
+				if (btnTic3.Text == "X" && btnTic5.Text == "X" && btnTic7.Text == "X"){
+						btnTic3.BackColor = Color.Chartreuse;
+						btnTic5.BackColor = Color.Chartreuse;
+						btnTic7.BackColor = Color.Chartreuse;
+						MessageBox.Show("The winner is Player 1!", "TicTacToe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						addScore = int.Parse(labelScore1.Text);
+						labelScore1.Text = Convert.ToString(addScore + 1);
+						resetter();
+				}
 			
 			//Across O Win
 				if (btnTic1.Text == "O" && btnTic5.Text == "O" && btnTic9.Text == "O"){
@@ -173,6 +182,23 @@ namespace Tic_Tac_Toe
 						addScore = int.Parse(labelScore2.Text);
 						labelScore2.Text = Convert.ToString(addScore + 1);
 						resetter();
+				}
+				if (btnTic3.Text == "O" && btnTic5.Text == "O" && btnTic7.Text == "O"){
+						btnTic3.BackColor = Color.Chartreuse;
+						btnTic5.BackColor = Color.Chartreuse;
+						btnTic7.BackColor = Color.Chartreuse;
+						MessageBox.Show("The winner is Player 2!", "TicTacToe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						addScore = int.Parse(labelScore2.Text);
+						labelScore2.Text = Convert.ToString(addScore + 1);
+						resetter();
+				}
+			
+			//Draw
+				if(btnTic1.Text != "" && btnTic2.Text != "" && btnTic3.Text != "" &&
+			  	btnTic4.Text != "" && btnTic5.Text != "" && btnTic6.Text != "" &&
+			  	btnTic7.Text != "" && btnTic8.Text != "" && btnTic9.Text != ""){
+					MessageBox.Show("It's a draw!!", "TicTacToe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					resetter();
 				}
 		}
 		
