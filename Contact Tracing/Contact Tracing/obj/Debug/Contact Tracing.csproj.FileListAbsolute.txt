@@ -1,0 +1,8 @@
+C:\Users\www.rica.com\Documents\SharpDevelop Projects\Contact Tracing\Contact Tracing\bin\Debug\Contact Tracing.exe.config
+C:\Users\www.rica.com\Documents\SharpDevelop Projects\Contact Tracing\Contact Tracing\bin\Debug\Contact Tracing.exe
+C:\Users\www.rica.com\Documents\SharpDevelop Projects\Contact Tracing\Contact Tracing\bin\Debug\Contact Tracing.pdb
+C:\Users\www.rica.com\Documents\SharpDevelop Projects\Contact Tracing\Contact Tracing\obj\Debug\Contact Tracing.csprojResolveAssemblyReference.cache
+C:\Users\www.rica.com\Documents\SharpDevelop Projects\Contact Tracing\Contact Tracing\obj\Debug\Contact_Tracing.MainForm.resources
+C:\Users\www.rica.com\Documents\SharpDevelop Projects\Contact Tracing\Contact Tracing\obj\Debug\Contact Tracing.csproj.GenerateResource.Cache
+C:\Users\www.rica.com\Documents\SharpDevelop Projects\Contact Tracing\Contact Tracing\obj\Debug\Contact Tracing.exe
+C:\Users\www.rica.com\Documents\SharpDevelop Projects\Contact Tracing\Contact Tracing\obj\Debug\Contact Tracing.pdb
