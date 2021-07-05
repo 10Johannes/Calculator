@@ -72,5 +72,12 @@ namespace Contact_Tracing
 				Application.Restart();
 			}
 		}
+		void ViewClick(object sender, EventArgs e)
+		{
+			this.Hide();
+		    var ReadForm = new ReadForm();
+		    ReadForm.Closed += (s, args) => this.Close(); 
+		    ReadForm.Show();
+		}
 	}
 }

@@ -29,5 +29,42 @@ namespace Contact_Tracing
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
+		void ButtonViewClick(object sender, EventArgs e)
+		{
+			try {
+				long length = new System.IO.FileInfo(Application.StartupPath + "\\Profiles\\" + textBoxSearch.Text + ".txt").Length;
+				if (length != 0){
+					textBoxLogs.Text = " ";
+					String text = System.IO.File.ReadAllText(Application.StartupPath + "\\Profiles\\" + textBoxSearch.Text + ".txt");
+					textBoxLogs.Text = text;
+				} else {
+					MessageBox.Show("The file does not exist.", "Contact Tracing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			} catch (Exception err) {
+				MessageBox.Show("The file does not exist.", "Contact Tracing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
+		void ButtonViewAllClick(object sender, EventArgs e)
+		{
+			try {
+				long length = new System.IO.FileInfo(Application.StartupPath + "\\Logs\\" + "Logs.txt").Length;
+				if (length != 0){
+					textBoxLogs.Text = " ";
+					String text = System.IO.File.ReadAllText(Application.StartupPath + "\\Logs\\" + "Logs.txt");
+					textBoxLogs.Text = text;
+				} else {
+					MessageBox.Show("The file does not exist.", "Contact Tracing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			} catch (Exception err) {
+				MessageBox.Show("The file does not exist."), "Contact Tracing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
+		void ButtonAddClick(object sender, EventArgs e)
+		{
+			this.Hide();
+		    var MainForm = new MainForm();
+		    MainForm.Closed += (s, args) => this.Close(); 
+		    MainForm.Show();
+		}
 	}
 }

@@ -263,6 +263,7 @@ namespace Contact_Tracing
 			this.View.TabIndex = 22;
 			this.View.Text = "View";
 			this.View.UseVisualStyleBackColor = true;
+			this.View.Click += new System.EventHandler(this.ViewClick);
 			// 
 			// MainForm
 			// 
