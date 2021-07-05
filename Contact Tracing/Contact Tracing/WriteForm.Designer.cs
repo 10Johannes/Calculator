@@ -34,7 +34,6 @@ namespace Contact_Tracing
 		private System.Windows.Forms.TextBox textBoxTime;
 		private System.Windows.Forms.Label labelDate;
 		private System.Windows.Forms.TextBox textBoxDate;
-		pName;
 		private System.Windows.Forms.Button buttonSave;
 		private System.Windows.Forms.Button View;
 		private System.Windows.Forms.Label labelAppName;
@@ -90,7 +89,7 @@ namespace Contact_Tracing
 			this.textBoxFirstName.Location = new System.Drawing.Point(34, 180);
 			this.textBoxFirstName.Name = "textBoxFirstName";
 			this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
-			this.textBoxFirstName.TabIndex = 0;
+			this.textBoxFirstName.TabIndex = 2;
 			// 
 			// labelFirstName
 			// 
@@ -113,7 +112,7 @@ namespace Contact_Tracing
 			this.textBoxMiddleName.Location = new System.Drawing.Point(34, 243);
 			this.textBoxMiddleName.Name = "textBoxMiddleName";
 			this.textBoxMiddleName.Size = new System.Drawing.Size(100, 20);
-			this.textBoxMiddleName.TabIndex = 2;
+			this.textBoxMiddleName.TabIndex = 3;
 			// 
 			// labelLastName
 			// 
@@ -143,7 +142,7 @@ namespace Contact_Tracing
 			this.textBoxContactNumber.Location = new System.Drawing.Point(153, 307);
 			this.textBoxContactNumber.Name = "textBoxContactNumber";
 			this.textBoxContactNumber.Size = new System.Drawing.Size(100, 20);
-			this.textBoxContactNumber.TabIndex = 10;
+			this.textBoxContactNumber.TabIndex = 7;
 			// 
 			// labelGender
 			// 
@@ -158,7 +157,7 @@ namespace Contact_Tracing
 			this.textBoxGender.Location = new System.Drawing.Point(153, 243);
 			this.textBoxGender.Name = "textBoxGender";
 			this.textBoxGender.Size = new System.Drawing.Size(100, 20);
-			this.textBoxGender.TabIndex = 8;
+			this.textBoxGender.TabIndex = 6;
 			// 
 			// labelAge
 			// 
@@ -173,7 +172,7 @@ namespace Contact_Tracing
 			this.textBoxAge.Location = new System.Drawing.Point(153, 180);
 			this.textBoxAge.Name = "textBoxAge";
 			this.textBoxAge.Size = new System.Drawing.Size(100, 20);
-			this.textBoxAge.TabIndex = 6;
+			this.textBoxAge.TabIndex = 5;
 			// 
 			// labelAddress
 			// 
@@ -189,7 +188,7 @@ namespace Contact_Tracing
 			this.textBoxAddress.Margin = new System.Windows.Forms.Padding(0);
 			this.textBoxAddress.Name = "textBoxAddress";
 			this.textBoxAddress.Size = new System.Drawing.Size(219, 20);
-			this.textBoxAddress.TabIndex = 14;
+			this.textBoxAddress.TabIndex = 9;
 			// 
 			// labelEmailAddress
 			// 
@@ -204,7 +203,7 @@ namespace Contact_Tracing
 			this.textBoxEmailAddress.Location = new System.Drawing.Point(34, 371);
 			this.textBoxEmailAddress.Name = "textBoxEmailAddress";
 			this.textBoxEmailAddress.Size = new System.Drawing.Size(219, 20);
-			this.textBoxEmailAddress.TabIndex = 12;
+			this.textBoxEmailAddress.TabIndex = 8;
 			// 
 			// labelTime
 			// 
@@ -219,7 +218,7 @@ namespace Contact_Tracing
 			this.textBoxTime.Location = new System.Drawing.Point(153, 100);
 			this.textBoxTime.Name = "textBoxTime";
 			this.textBoxTime.Size = new System.Drawing.Size(100, 20);
-			this.textBoxTime.TabIndex = 18;
+			this.textBoxTime.TabIndex = 1;
 			// 
 			// labelDate
 			// 
@@ -234,7 +233,7 @@ namespace Contact_Tracing
 			this.textBoxDate.Location = new System.Drawing.Point(34, 100);
 			this.textBoxDate.Name = "textBoxDate";
 			this.textBoxDate.Size = new System.Drawing.Size(100, 20);
-			this.textBoxDate.TabIndex = 16;
+			this.textBoxDate.TabIndex = 0;
 			// 
 			// labelAppName
 			// 
@@ -251,9 +250,10 @@ namespace Contact_Tracing
 			this.buttonSave.Location = new System.Drawing.Point(56, 475);
 			this.buttonSave.Name = "buttonSave";
 			this.buttonSave.Size = new System.Drawing.Size(75, 23);
-			this.buttonSave.TabIndex = 21;
+			this.buttonSave.TabIndex = 10;
 			this.buttonSave.Text = "Save";
 			this.buttonSave.UseVisualStyleBackColor = true;
+			this.buttonSave.Click += new System.EventHandler(this.ButtonSaveClick);
 			// 
 			// View
 			// 

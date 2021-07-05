@@ -17,7 +17,7 @@ namespace Contact_Tracing
 		private System.Windows.Forms.Label labelAppName;
 		private System.Windows.Forms.Panel panelViewLog;
 		private System.Windows.Forms.Label labelViewLog;
-		private System.Windows.Forms.Label label
+		private System.Windows.Forms.Label label;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
