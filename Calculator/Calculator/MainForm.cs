@@ -18,6 +18,7 @@ namespace Calculator
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		bool checkInput = false;
 		public MainForm()
 		{
 			//
@@ -33,13 +34,25 @@ namespace Calculator
 		{
 	
 		}
-		void Button7Click(object sender, EventArgs e)
+		void TextBoxDisplayTextChanged(object sender, EventArgs e)
 		{
 	
 		}
-		void Button13Click(object sender, EventArgs e)
+		void Numbers(object sender, EventArgs e)
 		{
-	
+			Button btn = (Button)sender;
+			if ((textBoxDisplay.Text == "") || (checkInput)){
+				textBoxDisplay.Text = "";
+			}
+			checkInput = false;
+			
+			if (btn.Text == "."){
+				if(!textBoxDisplay.Text.Contains(".")){
+					textBoxDisplay.Text = textBoxDisplay.Text + btn.Text;
+				}
+			} else {
+				textBoxDisplay.Text = textBoxDisplay.Text + btn.Text;
+			}
 		}
 	}
 }

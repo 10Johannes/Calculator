@@ -1,0 +1,8 @@
+C:\Users\www.rica.com\Desktop\JJ\OOP\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\www.rica.com\Desktop\JJ\OOP\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\www.rica.com\Desktop\JJ\OOP\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\www.rica.com\Desktop\JJ\OOP\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\www.rica.com\Desktop\JJ\OOP\Calculator\Calculator\obj\Debug\Calculator.MainForm.resources
+C:\Users\www.rica.com\Desktop\JJ\OOP\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\www.rica.com\Desktop\JJ\OOP\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\www.rica.com\Desktop\JJ\OOP\Calculator\Calculator\obj\Debug\Calculator.pdb
