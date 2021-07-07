@@ -18,6 +18,8 @@ namespace Calculator
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		float result = 0;
+		String operation = "";
 		bool checkInput = false;
 		public MainForm()
 		{
@@ -53,6 +55,14 @@ namespace Calculator
 			} else {
 				textBoxDisplay.Text = textBoxDisplay.Text + btn.Text;
 			}
+		}
+		void Operators(object sender, EventArgs e)
+		{
+			Button btn = (Button)sender;
+			operation = btn.Text;
+			result = float.Parse(textBoxDisplay.Text);
+			textBoxDisplay.Text = "";
+			labelMiniDisplay.Text = labelMiniDisplay.Text + "  " +System.Convert.ToString(result) + "  " + operation;
 		}
 	}
 }

@@ -43,6 +43,7 @@ namespace Calculator
 		private System.Windows.Forms.Button buttonMS;
 		private System.Windows.Forms.Button buttonMR;
 		private System.Windows.Forms.Button buttonMC;
+		private System.Windows.Forms.Label labelMiniDisplay;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -94,6 +95,7 @@ namespace Calculator
 			this.buttonMS = new System.Windows.Forms.Button();
 			this.buttonMR = new System.Windows.Forms.Button();
 			this.buttonMC = new System.Windows.Forms.Button();
+			this.labelMiniDisplay = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -214,6 +216,7 @@ namespace Calculator
 			this.buttonAdd.TabIndex = 14;
 			this.buttonAdd.Text = "+";
 			this.buttonAdd.UseVisualStyleBackColor = true;
+			this.buttonAdd.Click += new System.EventHandler(this.Operators);
 			// 
 			// buttonDivide
 			// 
@@ -223,6 +226,7 @@ namespace Calculator
 			this.buttonDivide.TabIndex = 13;
 			this.buttonDivide.Text = "/";
 			this.buttonDivide.UseVisualStyleBackColor = true;
+			this.buttonDivide.Click += new System.EventHandler(this.Operators);
 			// 
 			// buttonMultiply
 			// 
@@ -232,6 +236,7 @@ namespace Calculator
 			this.buttonMultiply.TabIndex = 12;
 			this.buttonMultiply.Text = "*";
 			this.buttonMultiply.UseVisualStyleBackColor = true;
+			this.buttonMultiply.Click += new System.EventHandler(this.Operators);
 			// 
 			// buttonSubtract
 			// 
@@ -241,6 +246,7 @@ namespace Calculator
 			this.buttonSubtract.TabIndex = 11;
 			this.buttonSubtract.Text = "-";
 			this.buttonSubtract.UseVisualStyleBackColor = true;
+			this.buttonSubtract.Click += new System.EventHandler(this.Operators);
 			// 
 			// buttonEqual
 			// 
@@ -307,11 +313,11 @@ namespace Calculator
 			// 
 			// textBoxDisplay
 			// 
-			this.textBoxDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBoxDisplay.Location = new System.Drawing.Point(15, 17);
+			this.textBoxDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxDisplay.Location = new System.Drawing.Point(15, 36);
 			this.textBoxDisplay.Multiline = true;
 			this.textBoxDisplay.Name = "textBoxDisplay";
-			this.textBoxDisplay.Size = new System.Drawing.Size(188, 58);
+			this.textBoxDisplay.Size = new System.Drawing.Size(188, 39);
 			this.textBoxDisplay.TabIndex = 23;
 			this.textBoxDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.textBoxDisplay.TextChanged += new System.EventHandler(this.TextBoxDisplayTextChanged);
@@ -370,11 +376,21 @@ namespace Calculator
 			this.buttonMC.Text = "MC";
 			this.buttonMC.UseVisualStyleBackColor = true;
 			// 
+			// labelMiniDisplay
+			// 
+			this.labelMiniDisplay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.labelMiniDisplay.Location = new System.Drawing.Point(16, 18);
+			this.labelMiniDisplay.Name = "labelMiniDisplay";
+			this.labelMiniDisplay.Size = new System.Drawing.Size(186, 23);
+			this.labelMiniDisplay.TabIndex = 30;
+			this.labelMiniDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(220, 293);
+			this.Controls.Add(this.labelMiniDisplay);
 			this.Controls.Add(this.buttonMAdd);
 			this.Controls.Add(this.buttonMSub);
 			this.Controls.Add(this.buttonMS);
