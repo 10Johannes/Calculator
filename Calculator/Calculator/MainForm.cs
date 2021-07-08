@@ -18,7 +18,7 @@ namespace Calculator
 	/// </summary>
 	public partial class MainForm : Form
 	{
-		float result = 0;
+		Double result = 0;
 		String operation = "";
 		bool checkInput = false;
 		public MainForm()
@@ -43,7 +43,7 @@ namespace Calculator
 		void Numbers(object sender, EventArgs e)
 		{
 			Button btn = (Button)sender;
-			if ((textBoxDisplay.Text == "") || (checkInput)){
+			if ((textBoxDisplay.Text == "0") || (checkInput)){
 				textBoxDisplay.Text = "";
 			}
 			checkInput = false;
@@ -59,10 +59,57 @@ namespace Calculator
 		void Operators(object sender, EventArgs e)
 		{
 			Button btn = (Button)sender;
-			operation = btn.Text;
-			result = float.Parse(textBoxDisplay.Text);
-			textBoxDisplay.Text = "";
-			labelMiniDisplay.Text = labelMiniDisplay.Text + "  " +System.Convert.ToString(result) + "  " + operation;
+			if (Convert.ToInt32(result) != 0){
+				buttonEqual.PerformClick();
+				checkInput = true;
+				operation = btn.Text;
+				labelMiniDisplay.Text = labelMiniDisplay.Text + "  " + System.Convert.ToString(result) + "  " + operation;
+			} else {
+				operation = btn.Text;
+				result = float.Parse(textBoxDisplay.Text);
+				textBoxDisplay.Text = "";
+				labelMiniDisplay.Text = labelMiniDisplay.Text + "  " + System.Convert.ToString(result) + "  " + operation;
+			}
+		}
+		void ButtonEqualClick(object sender, EventArgs e)
+		{
+			labelMiniDisplay.Text = "";
+			switch (operation){
+				case "+":
+					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					break;
+				case "-":
+					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					break;
+				case "*":
+					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					break;
+				case "/":
+					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					break;
+			}
+			result = Convert.ToDouble(textBoxDisplay.Text);
+			operation = "";
+		}
+		void ButtonClearEntryClick(object sender, EventArgs e)
+		{
+			textBoxDisplay.Text = "0";
+		}
+		void ButtonClearClick(object sender, EventArgs e)
+		{
+			textBoxDisplay.Text = "0";
+			labelMiniDisplay.Text = "";
+			result = 0;
+		}
+		void ButtonDeleteClick(object sender, EventArgs e)
+		{
+			if (textBoxDisplay.Text.Length > 0){
+				textBoxDisplay.Text = textBoxDisplay.Text.Remove(textBoxDisplay.Text.Length - 1, 1);
+			}
+			
+			if (textBoxDisplay.Text == ""){
+				textBoxDisplay.Text = "0";
+			}
 		}
 	}
 }

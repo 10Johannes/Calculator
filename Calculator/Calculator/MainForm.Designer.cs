@@ -256,6 +256,7 @@ namespace Calculator
 			this.buttonEqual.TabIndex = 15;
 			this.buttonEqual.Text = "=";
 			this.buttonEqual.UseVisualStyleBackColor = true;
+			this.buttonEqual.Click += new System.EventHandler(this.ButtonEqualClick);
 			// 
 			// buttonPercent
 			// 
@@ -292,6 +293,7 @@ namespace Calculator
 			this.buttonClear.TabIndex = 20;
 			this.buttonClear.Text = "C";
 			this.buttonClear.UseVisualStyleBackColor = true;
+			this.buttonClear.Click += new System.EventHandler(this.ButtonClearClick);
 			// 
 			// buttonClearEntry
 			// 
@@ -301,6 +303,7 @@ namespace Calculator
 			this.buttonClearEntry.TabIndex = 19;
 			this.buttonClearEntry.Text = "CE";
 			this.buttonClearEntry.UseVisualStyleBackColor = true;
+			this.buttonClearEntry.Click += new System.EventHandler(this.ButtonClearEntryClick);
 			// 
 			// buttonDelete
 			// 
@@ -310,6 +313,7 @@ namespace Calculator
 			this.buttonDelete.TabIndex = 18;
 			this.buttonDelete.Text = "←";
 			this.buttonDelete.UseVisualStyleBackColor = true;
+			this.buttonDelete.Click += new System.EventHandler(this.ButtonDeleteClick);
 			// 
 			// textBoxDisplay
 			// 
@@ -319,6 +323,7 @@ namespace Calculator
 			this.textBoxDisplay.Name = "textBoxDisplay";
 			this.textBoxDisplay.Size = new System.Drawing.Size(188, 39);
 			this.textBoxDisplay.TabIndex = 23;
+			this.textBoxDisplay.Text = "0";
 			this.textBoxDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.textBoxDisplay.TextChanged += new System.EventHandler(this.TextBoxDisplayTextChanged);
 			// 
