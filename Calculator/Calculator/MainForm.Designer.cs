@@ -284,6 +284,7 @@ namespace Calculator
 			this.buttonSquareRoot.TabIndex = 22;
 			this.buttonSquareRoot.Text = "√";
 			this.buttonSquareRoot.UseVisualStyleBackColor = true;
+			this.buttonSquareRoot.Click += new System.EventHandler(this.ButtonSquareRootClick);
 			// 
 			// buttonClear
 			// 
@@ -335,6 +336,7 @@ namespace Calculator
 			this.buttonSign.TabIndex = 24;
 			this.buttonSign.Text = "±";
 			this.buttonSign.UseVisualStyleBackColor = true;
+			this.buttonSign.Click += new System.EventHandler(this.ButtonSignClick);
 			// 
 			// buttonMAdd
 			// 

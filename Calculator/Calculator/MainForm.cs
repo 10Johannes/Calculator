@@ -66,7 +66,7 @@ namespace Calculator
 				labelMiniDisplay.Text = labelMiniDisplay.Text + "  " + System.Convert.ToString(result) + "  " + operation;
 			} else {
 				operation = btn.Text;
-				result = float.Parse(textBoxDisplay.Text);
+				result = Double.Parse(textBoxDisplay.Text);
 				textBoxDisplay.Text = "";
 				labelMiniDisplay.Text = labelMiniDisplay.Text + "  " + System.Convert.ToString(result) + "  " + operation;
 			}
@@ -79,17 +79,18 @@ namespace Calculator
 					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
 					break;
 				case "-":
-					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					textBoxDisplay.Text = (result - Convert.ToDouble(textBoxDisplay.Text)).ToString();
 					break;
 				case "*":
-					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					textBoxDisplay.Text = (result * Convert.ToDouble(textBoxDisplay.Text)).ToString();
 					break;
 				case "/":
-					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					textBoxDisplay.Text = (result / Convert.ToDouble(textBoxDisplay.Text)).ToString();
 					break;
 			}
 			result = Convert.ToDouble(textBoxDisplay.Text);
 			operation = "";
+			checkInput = true;
 		}
 		void ButtonClearEntryClick(object sender, EventArgs e)
 		{
@@ -110,6 +111,20 @@ namespace Calculator
 			if (textBoxDisplay.Text == ""){
 				textBoxDisplay.Text = "0";
 			}
+		}
+		void ButtonSignClick(object sender, EventArgs e)
+		{
+			if (textBoxDisplay.Text.Contains("-")){
+			    textBoxDisplay.Text = textBoxDisplay.Text.Remove(0, 1);
+			} else {
+				if (textBoxDisplay.Text != "0"){
+					textBoxDisplay.Text = "-" + textBoxDisplay.Text;
+				}
+			}
+		}
+		void ButtonSquareRootClick(object sender, EventArgs e)
+		{
+			textBoxDisplay.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(textBoxDisplay.Text)));
 		}
 	}
 }
