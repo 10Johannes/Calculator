@@ -347,6 +347,7 @@ namespace Calculator
 			this.buttonMAdd.TabIndex = 29;
 			this.buttonMAdd.Text = "M+";
 			this.buttonMAdd.UseVisualStyleBackColor = true;
+			this.buttonMAdd.Click += new System.EventHandler(this.ButtonMAddClick);
 			// 
 			// buttonMSub
 			// 
@@ -356,6 +357,7 @@ namespace Calculator
 			this.buttonMSub.TabIndex = 28;
 			this.buttonMSub.Text = "M-";
 			this.buttonMSub.UseVisualStyleBackColor = true;
+			this.buttonMSub.Click += new System.EventHandler(this.ButtonMSubClick);
 			// 
 			// buttonMS
 			// 
@@ -365,6 +367,7 @@ namespace Calculator
 			this.buttonMS.TabIndex = 27;
 			this.buttonMS.Text = "MS";
 			this.buttonMS.UseVisualStyleBackColor = true;
+			this.buttonMS.Click += new System.EventHandler(this.ButtonMSClick);
 			// 
 			// buttonMR
 			// 
@@ -374,6 +377,7 @@ namespace Calculator
 			this.buttonMR.TabIndex = 26;
 			this.buttonMR.Text = "MR";
 			this.buttonMR.UseVisualStyleBackColor = true;
+			this.buttonMR.Click += new System.EventHandler(this.ButtonMRClick);
 			// 
 			// buttonMC
 			// 
@@ -383,6 +387,7 @@ namespace Calculator
 			this.buttonMC.TabIndex = 25;
 			this.buttonMC.Text = "MC";
 			this.buttonMC.UseVisualStyleBackColor = true;
+			this.buttonMC.Click += new System.EventHandler(this.ButtonMCClick);
 			// 
 			// labelMiniDisplay
 			// 

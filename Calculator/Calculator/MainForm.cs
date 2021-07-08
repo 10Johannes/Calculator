@@ -18,7 +18,7 @@ namespace Calculator
 	/// </summary>
 	public partial class MainForm : Form
 	{
-		Double result = 0;
+		Double result = 0, memory = 0;
 		String operation = "";
 		bool checkInput = false;
 		public MainForm()
@@ -55,21 +55,31 @@ namespace Calculator
 		void Operators(object sender, EventArgs e)
 		{
 			Button btn = (Button)sender;
-			if (Convert.ToInt32(result) != 0){
-				buttonEqual.PerformClick();
-				checkInput = true;
+			String currValue = textBoxDisplay.Text;
+			try {
+				if (Convert.ToInt32(result) != 0){
+					buttonEqual.PerformClick();
+					checkInput = true;
+					operation = btn.Text;
+					labelMiniDisplay.Text = labelMiniDisplay.Text + "  " + currValue + "  " + operation;
+				} else {
+					operation = btn.Text;
+					result = Double.Parse(textBoxDisplay.Text);
+					textBoxDisplay.Text = "";
+					labelMiniDisplay.Text = labelMiniDisplay.Text + "  " + currValue + "  " + operation;
+				}
+			} catch (Exception err) {
 				operation = btn.Text;
-				labelMiniDisplay.Text = labelMiniDisplay.Text + "  " + System.Convert.ToString(result) + "  " + operation;
-			} else {
-				operation = btn.Text;
-				result = Double.Parse(textBoxDisplay.Text);
-				textBoxDisplay.Text = "";
-				labelMiniDisplay.Text = labelMiniDisplay.Text + "  " + System.Convert.ToString(result) + "  " + operation;
+				labelMiniDisplay.Text = labelMiniDisplay.Text.Remove(labelMiniDisplay.Text.Length - 1, 1);
+				if (currValue != ""){
+					labelMiniDisplay.Text += "  " + currValue + "  " + operation;
+				} else {
+					labelMiniDisplay.Text += operation;
+				}
 			}
 		}
 		void ButtonEqualClick(object sender, EventArgs e)
 		{
-			labelMiniDisplay.Text = "";
 			switch (operation){
 				case "+":
 					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
@@ -129,7 +139,26 @@ namespace Calculator
 		void ButtonReciprocateClick(object sender, EventArgs e)
 		{
 			textBoxDisplay.Text = Convert.ToString(1/Convert.ToDouble(textBoxDisplay.Text));
-
+		}
+		void ButtonMCClick(object sender, EventArgs e)
+		{
+			memory = 0;
+		}
+		void ButtonMRClick(object sender, EventArgs e)
+		{
+			textBoxDisplay.Text = Convert.ToString(memory);
+		}
+		void ButtonMSClick(object sender, EventArgs e)
+		{
+			memory = Convert.ToDouble(textBoxDisplay.Text);
+		}
+		void ButtonMAddClick(object sender, EventArgs e)
+		{
+			memory += Convert.ToDouble(textBoxDisplay.Text);
+		}
+		void ButtonMSubClick(object sender, EventArgs e)
+		{
+			memory -= Convert.ToDouble(textBoxDisplay.Text);
 		}
 	}
 }
