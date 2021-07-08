@@ -266,6 +266,7 @@ namespace Calculator
 			this.buttonPercent.TabIndex = 17;
 			this.buttonPercent.Text = "%";
 			this.buttonPercent.UseVisualStyleBackColor = true;
+			this.buttonPercent.Click += new System.EventHandler(this.ButtonPercentClick);
 			// 
 			// buttonReciprocate
 			// 
@@ -275,6 +276,7 @@ namespace Calculator
 			this.buttonReciprocate.TabIndex = 16;
 			this.buttonReciprocate.Text = "1/x";
 			this.buttonReciprocate.UseVisualStyleBackColor = true;
+			this.buttonReciprocate.Click += new System.EventHandler(this.ButtonReciprocateClick);
 			// 
 			// buttonSquareRoot
 			// 
@@ -326,7 +328,6 @@ namespace Calculator
 			this.textBoxDisplay.TabIndex = 23;
 			this.textBoxDisplay.Text = "0";
 			this.textBoxDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.textBoxDisplay.TextChanged += new System.EventHandler(this.TextBoxDisplayTextChanged);
 			// 
 			// buttonSign
 			// 

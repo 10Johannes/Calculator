@@ -36,10 +36,6 @@ namespace Calculator
 		{
 	
 		}
-		void TextBoxDisplayTextChanged(object sender, EventArgs e)
-		{
-	
-		}
 		void Numbers(object sender, EventArgs e)
 		{
 			Button btn = (Button)sender;
@@ -125,6 +121,15 @@ namespace Calculator
 		void ButtonSquareRootClick(object sender, EventArgs e)
 		{
 			textBoxDisplay.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(textBoxDisplay.Text)));
+		}
+		void ButtonPercentClick(object sender, EventArgs e)
+		{
+			textBoxDisplay.Text = Convert.ToString((Convert.ToDouble(textBoxDisplay.Text)/100)*Convert.ToDouble(textBoxDisplay.Text));
+		}
+		void ButtonReciprocateClick(object sender, EventArgs e)
+		{
+			textBoxDisplay.Text = Convert.ToString(1/Convert.ToDouble(textBoxDisplay.Text));
+
 		}
 	}
 }
