@@ -7,9 +7,7 @@ namespace Calculator
 {
 	public partial class MainForm : Form
 	{
-		Double result = 0, memory = 0;
-		String operation = "";
-		bool checkInput = false;
+		calcVariables calc = new calcVariables();
 		
 		public MainForm()
 		{
@@ -19,10 +17,10 @@ namespace Calculator
 		void Numbers(object sender, EventArgs e)
 		{
 			Button btn = (Button)sender;
-			if ((textBoxDisplay.Text == "0") || (checkInput)){
+			if ((textBoxDisplay.Text == "0") || (calc.CheckInput)){
 				textBoxDisplay.Text = "";
 			}
-			checkInput = false;
+			calc.CheckInput = false;
 			
 			if (btn.Text == "."){
 				if(!textBoxDisplay.Text.Contains(".")){
@@ -38,16 +36,16 @@ namespace Calculator
 			Button btn = (Button)sender;
 			String currValue = textBoxDisplay.Text;
 			try {
-				if (Convert.ToInt32(result) != 0){
+				if (Convert.ToInt32(calc.Result) != 0){
 					buttonEqual.PerformClick();
-					checkInput = true;
-					operation = btn.Text;
-					labelMiniDisplay.Text +=  "  " + currValue + "  " + operation;
+					calc.CheckInput = true;
+					calc.Operation = btn.Text;
+					labelMiniDisplay.Text +=  "  " + currValue + "  " + calc.Operation;
 				} else {
-					operation = btn.Text;
-					result = Double.Parse(textBoxDisplay.Text);
+					calc.Operation = btn.Text;
+					calc.Result = Double.Parse(textBoxDisplay.Text);
 					textBoxDisplay.Text = "";
-					labelMiniDisplay.Text +=  "  " + currValue + "  " + operation;
+					labelMiniDisplay.Text +=  "  " + currValue + "  " + calc.Operation;
 				}
 			} catch (Exception err) {
 
@@ -57,24 +55,24 @@ namespace Calculator
 		void ButtonEqualClick(object sender, EventArgs e)
 		{
 			String currValue = textBoxDisplay.Text;
-			switch (operation){
+			switch (calc.Operation){
 				case "+":
-					textBoxDisplay.Text = (result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					textBoxDisplay.Text = (calc.Result + Convert.ToDouble(textBoxDisplay.Text)).ToString();
 					break;
 				case "-":
-					textBoxDisplay.Text = (result - Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					textBoxDisplay.Text = (calc.Result - Convert.ToDouble(textBoxDisplay.Text)).ToString();
 					break;
 				case "*":
-					textBoxDisplay.Text = (result * Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					textBoxDisplay.Text = (calc.Result * Convert.ToDouble(textBoxDisplay.Text)).ToString();
 					break;
 				case "/":
-					textBoxDisplay.Text = (result / Convert.ToDouble(textBoxDisplay.Text)).ToString();
+					textBoxDisplay.Text = (calc.Result / Convert.ToDouble(textBoxDisplay.Text)).ToString();
 					break;
 			}
-			result = Convert.ToDouble(textBoxDisplay.Text);
+			calc.Result = Convert.ToDouble(textBoxDisplay.Text);
 	
-			operation = "";
-			checkInput = true;
+			calc.Operation = "";
+			calc.CheckInput = true;
 		}
 		
 		void ButtonClearEntryClick(object sender, EventArgs e)
@@ -86,7 +84,7 @@ namespace Calculator
 		{
 			textBoxDisplay.Text = "0";
 			labelMiniDisplay.Text = "";
-			result = 0;
+			calc.Result = 0;
 		}
 		
 		void ButtonDeleteClick(object sender, EventArgs e)
@@ -118,7 +116,7 @@ namespace Calculator
 		
 		void ButtonPercentClick(object sender, EventArgs e)
 		{
-			textBoxDisplay.Text = Convert.ToString((Convert.ToDouble(textBoxDisplay.Text)/100)*result);
+			textBoxDisplay.Text = Convert.ToString((Convert.ToDouble(textBoxDisplay.Text)/100)*calc.Result);
 		}
 		
 		void ButtonReciprocateClick(object sender, EventArgs e)
@@ -128,27 +126,27 @@ namespace Calculator
 		
 		void ButtonMCClick(object sender, EventArgs e)
 		{
-			memory = 0;
+			calc.Memory = 0;
 		}
 		
 		void ButtonMRClick(object sender, EventArgs e)
 		{
-			textBoxDisplay.Text = Convert.ToString(memory);
+			textBoxDisplay.Text = Convert.ToString(calc.Memory);
 		}
 		
 		void ButtonMSClick(object sender, EventArgs e)
 		{
-			memory = Convert.ToDouble(textBoxDisplay.Text);
+			calc.Memory = Convert.ToDouble(textBoxDisplay.Text);
 		}
 		
 		void ButtonMAddClick(object sender, EventArgs e)
 		{
-			memory += Convert.ToDouble(textBoxDisplay.Text);
+			calc.Memory += Convert.ToDouble(textBoxDisplay.Text);
 		}
 		
 		void ButtonMSubClick(object sender, EventArgs e)
 		{
-			memory -= Convert.ToDouble(textBoxDisplay.Text);
+			calc.Memory -= Convert.ToDouble(textBoxDisplay.Text);
 		}
 	}
 }
