@@ -435,7 +435,6 @@ namespace Calculator
 			this.Controls.Add(this.button1);
 			this.Name = "MainForm";
 			this.Text = "Calculator";
-			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
